@@ -17,20 +17,18 @@ const NavBar = observer(() => {
     <>
       <Navbar bg='dark' data-bs-theme='dark'>
         <Container>
-          <NavLink style={{ color: "white" }} to={SHOP_ROUTE}>
+          <NavLink style={{ color: "white", textDecoration: "none", textTransform: "uppercase" }} to={SHOP_ROUTE}>
             Online Store
           </NavLink>
           {user.isAuth ? (
-            <Nav className='ml-auto'>
-              <Button variant='outline-light' type='submit'>
-                Админ панель
-              </Button>
-              <Button variant='outline-light' type='submit' className='ml-2'>
-                Войти
+            <Nav>
+              <Button variant='outline-light'>Админ панель</Button>
+              <Button variant='outline-light' style={{ marginLeft: "10px" }}>
+                Выйти
               </Button>
             </Nav>
           ) : (
-            <Nav className='ml-auto'>
+            <Nav>
               <Button variant='outline-light' type='submit' onClick={() => user.setIsAuth(true)}>
                 Авторизация
               </Button>
