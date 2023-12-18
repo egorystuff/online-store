@@ -16,10 +16,10 @@ export default class DeviceStore {
     ];
 
     this._devices = [
-      { id: 1, name: "Iphone 12 pro", price: 25000, rating: 5 },
-      { id: 2, name: "Iphone 13 pro", price: 25000, rating: 5 },
-      { id: 2, name: "Iphone 14 pro", price: 25000, rating: 5 },
-      { id: 2, name: "Iphone 14 pro", price: 25000, rating: 5 },
+      { id: 1, name: "Iphone 12 pro", price: 25000, rating: 5, img: "http://placehold.it/150x150" },
+      { id: 2, name: "Iphone 12 pro", price: 25000, rating: 5, img: "http://placehold.it/150x150" },
+      { id: 3, name: "Iphone 12 pro", price: 25000, rating: 5, img: "http://placehold.it/150x150" },
+      { id: 4, name: "Galaxy S23 Ultra", price: 25000, rating: 5, img: "http://placehold.it/150x150" },
     ];
 
     this._selectedType = {};
