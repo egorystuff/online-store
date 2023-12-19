@@ -5,12 +5,20 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { LOGIN_ROUTE, REGISTRATION_ROUTE } from "../utils/consts";
 import { useLocation } from "react-router-dom";
+import { login, registration } from "../http/userAPI";
 
 const Auth = () => {
   const location = useLocation();
   const isLogin = location.pathname === LOGIN_ROUTE;
 
-  console.log(isLogin);
+  const click = async () => {
+    if (isLogin) {
+      const response = await login();
+    } else {
+      const response = await registration();
+      console.log(response);
+    }
+  };
 
   return (
     <Container className='d-flex justify-content-center align-items-center' style={{ height: window.innerHeight - 54 }}>

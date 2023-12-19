@@ -12,7 +12,7 @@ const CreateBrand = ({ show, onHide }) => {
       </Modal.Header>
       <Modal.Body>
         <Form>
-          <Form.Control placeholder='ВВедите название типа'></Form.Control>
+          <Form.Control placeholder='Введите название типа'></Form.Control>
         </Form>
       </Modal.Body>
       <Modal.Footer>
