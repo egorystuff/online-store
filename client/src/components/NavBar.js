@@ -14,6 +14,11 @@ const NavBar = observer(() => {
   const { user } = useContext(Context);
   const navigate = useNavigate();
 
+  const logOut = () => {
+    user.setUser({});
+    user.setIsAuth(false);
+  };
+
   return (
     <>
       <Navbar bg='dark' data-bs-theme='dark'>
@@ -26,13 +31,13 @@ const NavBar = observer(() => {
               <Button variant='outline-light' onClick={() => navigate(ADMIN_ROUTE)}>
                 Админ панель
               </Button>
-              <Button variant='outline-light' onClick={() => navigate(LOGIN_ROUTE)} style={{ marginLeft: "10px" }}>
+              <Button variant='outline-light' onClick={() => logOut()} style={{ marginLeft: "10px" }}>
                 Выйти
               </Button>
             </Nav>
           ) : (
             <Nav>
-              <Button variant='outline-light' type='submit' onClick={() => user.setIsAuth(true)}>
+              <Button variant='outline-light' type='submit' onClick={() => navigate(LOGIN_ROUTE)}>
                 Авторизация
               </Button>
             </Nav>
