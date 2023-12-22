@@ -3,7 +3,7 @@ import { Col, Dropdown, Form, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Context } from "../..";
-import { createDevice, fetchBrands, fetchDevices, fetchTypes } from "../../http/deviceApi";
+import { createDevice, fetchBrands, fetchTypes } from "../../http/deviceApi";
 import { observer } from "mobx-react-lite";
 
 const CreateDevice = observer(({ show, onHide }) => {
@@ -35,7 +35,14 @@ const CreateDevice = observer(({ show, onHide }) => {
   };
 
   const addDevice = () => {
-    console.log(info);
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("price", `${price}`);
+    formData.append("img", file);
+    formData.append("brandId", device.selectedBrand.id);
+    formData.append("typeId", device.selectedType.id);
+    formData.append("info", JSON.stringify(info));
+    createDevice(formData).then((data) => onHide());
   };
 
   return (
