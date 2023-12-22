@@ -8,7 +8,7 @@ import { observer } from "mobx-react-lite";
 
 const CreateDevice = observer(({ show, onHide }) => {
   const { device } = useContext(Context);
-  const [info, setInfo] = useState([]);
+  const [info, setInfo] = useState([{ title: "Дата выпуска" }, { title: "Слоган" }]);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
